@@ -4,145 +4,106 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Own The Way Race 2026</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-
-body{
-  background:#020617;
-  color:#fff;
-  overflow-x:hidden;
-}
-
-/* BACKGROUND IMAGE LAYER */
-.bg{
-  position:fixed;
-  inset:0;
-  background:url('poster.jpg') center/cover no-repeat;
-  filter:blur(8px) brightness(0.4);
-  z-index:-2;
-}
-
-.overlay{
-  position:fixed;
-  inset:0;
-  background:linear-gradient(135deg,rgba(0,0,0,0.7),rgba(16,185,129,0.3));
-  z-index:-1;
-}
+body{background:#020617;color:#fff}
 
 .hero{
   min-height:100vh;
   display:flex;
   flex-direction:column;
-  justify-content:center;
   align-items:center;
   text-align:center;
   padding:20px;
 }
 
-.hero h1{
-  font-size:3.2rem;
-  font-weight:800;
+h1{font-size:3rem;font-weight:800}
+h1 span{color:#22c55e}
+
+.poster-container{
+  width:100%;
+  max-width:420px;
+  margin:30px auto;
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 40px rgba(0,0,0,0.6);
 }
 
-.hero h1 span{
-  color:#22c55e;
+.poster-container img{
+  width:100%;
 }
 
-.hero p{
-  margin-top:10px;
-  opacity:0.8;
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.5);
 }
+
+.text{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.text h2{color:#22c55e;font-size:28px}
+.text h3{font-size:22px;margin-top:10px}
+.text p{color:#22c55e}
 
 .countdown{
   display:flex;
-  gap:15px;
-  margin:25px 0;
+  gap:10px;
+  margin:20px;
   flex-wrap:wrap;
   justify-content:center;
 }
 
 .box{
-  background:rgba(17,24,39,0.8);
-  backdrop-filter:blur(10px);
-  padding:15px 20px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-  min-width:80px;
+  background:#111827;
+  padding:12px;
+  border-radius:12px;
+  min-width:70px;
 }
 
-.box h2{
-  font-size:2rem;
-  color:#22c55e;
-}
-
-.label{
-  font-size:0.8rem;
-  opacity:0.7;
-}
-
-.section{
-  padding:60px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-
-.card{
-  background:rgba(17,24,39,0.85);
-  border-radius:20px;
-  padding:25px;
-  margin:20px 0;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px) scale(1.01);
-}
-
-.price{
-  font-size:1.6rem;
-  color:#22c55e;
-  font-weight:700;
-  margin-top:10px;
-}
+.box h2{color:#22c55e}
 
 .btn{
   margin-top:20px;
-  display:inline-block;
-  padding:15px 35px;
+  padding:15px 30px;
   border-radius:50px;
   background:#22c55e;
   color:#000;
-  font-weight:600;
   text-decoration:none;
-  box-shadow:0 10px 25px rgba(34,197,94,0.4);
-  transition:0.3s;
 }
 
-.btn:hover{
-  transform:scale(1.05);
+/* CATEGORY */
+.section{
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
 }
 
-.qr{
-  width:200px;
-  margin-top:20px;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.6);
+.card{
+  background:#111827;
+  padding:20px;
+  border-radius:20px;
+  margin:15px 0;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
+.card h3{font-size:22px}
+.price{color:#22c55e;font-weight:700;margin-top:10px}
+
+/* FOOTER */
 footer{
   text-align:center;
-  padding:25px;
+  padding:30px;
   opacity:0.6;
-}
-
-.small-title{
-  margin-top:20px;
-  font-size:0.9rem;
-  opacity:0.7;
 }
 
 </style>
@@ -150,36 +111,33 @@ footer{
 
 <body>
 
-<div class="bg"></div>
-<div class="overlay"></div>
-
 <div class="hero">
   <h1>OWN THE WAY <span>RACE</span></h1>
   <p>26 Juli 2026 • Harvest City</p>
 
-  <!-- COUNTDOWN EVENT -->
-  <div class="small-title">Menuju Hari Event</div>
-  <div class="countdown">
-    <div class="box"><h2 id="days">0</h2><div class="label">Hari</div></div>
-    <div class="box"><h2 id="hours">0</h2><div class="label">Jam</div></div>
-    <div class="box"><h2 id="minutes">0</h2><div class="label">Menit</div></div>
-    <div class="box"><h2 id="seconds">0</h2><div class="label">Detik</div></div>
+  <div class="poster-container">
+    <img src="poster.jpg" alt="Poster Event">
+    <div class="overlay"></div>
+    <div class="text">
+      <h2>OPEN REGISTER NOW</h2>
+      <h3>OWN THE WAY RACE</h3>
+      <p>26 JULI 2026</p>
+    </div>
   </div>
 
-  <!-- COUNTDOWN PENUTUPAN -->
-  <div class="small-title">Batas Pembelian Tiket (27 April 2026)</div>
   <div class="countdown">
-    <div class="box"><h2 id="cdays">0</h2><div class="label">Hari</div></div>
-    <div class="box"><h2 id="chours">0</h2><div class="label">Jam</div></div>
-    <div class="box"><h2 id="cminutes">0</h2><div class="label">Menit</div></div>
-    <div class="box"><h2 id="cseconds">0</h2><div class="label">Detik</div></div>
+    <div class="box"><h2 id="d">0</h2><small>Hari</small></div>
+    <div class="box"><h2 id="h">0</h2><small>Jam</small></div>
+    <div class="box"><h2 id="m">0</h2><small>Menit</small></div>
+    <div class="box"><h2 id="s">0</h2><small>Detik</small></div>
   </div>
 
-  <a href="#register" class="btn">Daftar Sekarang</a>
+  <a href="#" class="btn">Daftar Sekarang</a>
 </div>
 
+<!-- CATEGORY -->
 <div class="section">
-  <h2>Kategori</h2>
+  <h2 style="text-align:center">Kategori Lomba</h2>
 
   <div class="card">
     <h3>5K</h3>
@@ -194,48 +152,21 @@ footer{
   </div>
 </div>
 
-<div class="section" id="register" style="text-align:center">
-  <h2>Register Now</h2>
-  <p>Scan QRIS atau klik tombol di bawah</p>
-
-  <img src="qris.png" class="qr">
-
-  <br>
-  <a href="#" class="btn">Bayar Sekarang</a>
-</div>
-
 <footer>
-  © 2026 Own The Way Race • Powered by Kahf
+  © 2026 Own The Way Race • All Rights Reserved
 </footer>
 
 <script>
-
-// EVENT COUNTDOWN
-const eventDate = new Date("July 26, 2026 00:00:00").getTime();
-
+const target = new Date("July 26, 2026 00:00:00").getTime();
 setInterval(()=>{
   const now = new Date().getTime();
-  const d = eventDate - now;
+  const d = target-now;
 
-  document.getElementById("days").innerText = Math.floor(d/(1000*60*60*24));
-  document.getElementById("hours").innerText = Math.floor((d%(1000*60*60*24))/(1000*60*60));
-  document.getElementById("minutes").innerText = Math.floor((d%(1000*60*60))/(1000*60));
-  document.getElementById("seconds").innerText = Math.floor((d%(1000*60))/1000);
+  document.getElementById('d').innerText = Math.max(0,Math.floor(d/(1000*60*60*24)));
+  document.getElementById('h').innerText = Math.max(0,Math.floor((d%(1000*60*60*24))/(1000*60*60)));
+  document.getElementById('m').innerText = Math.max(0,Math.floor((d%(1000*60*60))/(1000*60)));
+  document.getElementById('s').innerText = Math.max(0,Math.floor((d%(1000*60))/1000));
 },1000);
-
-// CLOSING COUNTDOWN
-const closeDate = new Date("April 27, 2026 23:59:59").getTime();
-
-setInterval(()=>{
-  const now = new Date().getTime();
-  const d = closeDate - now;
-
-  document.getElementById("cdays").innerText = Math.floor(d/(1000*60*60*24));
-  document.getElementById("chours").innerText = Math.floor((d%(1000*60*60*24))/(1000*60*60));
-  document.getElementById("cminutes").innerText = Math.floor((d%(1000*60*60))/(1000*60));
-  document.getElementById("cseconds").innerText = Math.floor((d%(1000*60))/1000);
-},1000);
-
 </script>
 
 </body>
