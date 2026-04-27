@@ -4,12 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Own The Way Race 2026</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{background:#020617;color:#fff}
 
+/* HERO */
 .hero{
   min-height:100vh;
   display:flex;
@@ -22,6 +24,7 @@ body{background:#020617;color:#fff}
 h1{font-size:3rem;font-weight:800}
 h1 span{color:#22c55e}
 
+/* POSTER */
 .poster-container{
   width:100%;
   max-width:420px;
@@ -32,9 +35,7 @@ h1 span{color:#22c55e}
   box-shadow:0 10px 40px rgba(0,0,0,0.6);
 }
 
-.poster-container img{
-  width:100%;
-}
+.poster-container img{width:100%}
 
 .overlay{
   position:absolute;
@@ -55,6 +56,7 @@ h1 span{color:#22c55e}
 .text h3{font-size:22px;margin-top:10px}
 .text p{color:#22c55e}
 
+/* COUNTDOWN */
 .countdown{
   display:flex;
   gap:10px;
@@ -72,6 +74,7 @@ h1 span{color:#22c55e}
 
 .box h2{color:#22c55e}
 
+/* BUTTON */
 .btn{
   margin-top:20px;
   padding:15px 30px;
@@ -79,6 +82,7 @@ h1 span{color:#22c55e}
   background:#22c55e;
   color:#000;
   text-decoration:none;
+  cursor:pointer;
 }
 
 /* CATEGORY */
@@ -105,7 +109,6 @@ footer{
   padding:30px;
   opacity:0.6;
 }
-
 </style>
 </head>
 
@@ -116,7 +119,7 @@ footer{
   <p>26 Juli 2026 • Harvest City</p>
 
   <div class="poster-container">
-    <img src="poster.jpg" alt="Poster Event">
+    <img src="poster.jpg">
     <div class="overlay"></div>
     <div class="text">
       <h2>OPEN REGISTER NOW</h2>
@@ -132,10 +135,13 @@ footer{
     <div class="box"><h2 id="s">0</h2><small>Detik</small></div>
   </div>
 
-  <a href="#" class="btn">Daftar Sekarang</a>
+  <!-- BUTTON FIX -->
+  <div class="btn" onclick="goForm()">
+    Daftar Sekarang
+  </div>
+
 </div>
 
-<!-- CATEGORY -->
 <div class="section">
   <h2 style="text-align:center">Kategori Lomba</h2>
 
@@ -153,11 +159,12 @@ footer{
 </div>
 
 <footer>
-  © 2026 Own The Way Race • All Rights Reserved
+  © 2026 Own The Way Race
 </footer>
 
 <script>
 const target = new Date("July 26, 2026 00:00:00").getTime();
+
 setInterval(()=>{
   const now = new Date().getTime();
   const d = target-now;
@@ -167,6 +174,11 @@ setInterval(()=>{
   document.getElementById('m').innerText = Math.max(0,Math.floor((d%(1000*60*60))/(1000*60)));
   document.getElementById('s').innerText = Math.max(0,Math.floor((d%(1000*60))/1000));
 },1000);
+
+/* REDIRECT FIX */
+function goForm(){
+  window.location.href = "https://zonamerahmarsyal-creator.github.io/FORM-PENDAFTARAN-OWN-THE-/";
+}
 </script>
 
 </body>
